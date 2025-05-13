@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- flashbot_v1_mycustomresource.yaml
+# +kubebuilder:scaffold:manifestskustomizesamples
