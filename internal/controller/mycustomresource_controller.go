@@ -53,7 +53,9 @@ type MyCustomResourceReconciler struct {
 // For more details, check Reconcile and its Result here:
 // - https://pkg.go.dev/sigs.k8s.io/controller-runtime@v0.20.4/pkg/reconcile
 func (r *MyCustomResourceReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
-	_ = logf.FromContext(ctx)
+	// _ = logf.FromContext(ctx)
+	log := logf.FromContext(ctx)
+
 
 	// TODO(user): your logic here
 	var myResource flashbotv1.MyCustomResource
@@ -88,7 +90,7 @@ func (r *MyCustomResourceReconciler) Reconcile(ctx context.Context, req ctrl.Req
 }
 
 
-func (r *MyResourceReconciler) createDeployment(myResource *mygroupv1.MyResource) *appsv1.Deployment {
+func (r *MyCustomResourceReconciler) createDeployment(myResource *flashbotv1.MyResource) *appsv1.Deployment {
  labels := map[string]string{"app": myResource.Name}
  replicas := int32(myResource.Spec.Replicas)
  return &appsv1.Deployment{
