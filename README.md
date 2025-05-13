@@ -133,3 +133,14 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
+```
+# nano test-operator.yaml
+apiVersion: flashbot.example.com/v1
+kind: MyCustomResource
+metadata:
+  name: my-web-app
+  namespace: dev-test
+spec:
+  image: nginx:latest
+  replicas: 3
+```
