@@ -90,7 +90,7 @@ func (r *MyCustomResourceReconciler) Reconcile(ctx context.Context, req ctrl.Req
 }
 
 
-func (r *MyCustomResourceReconciler) createDeployment(myResource *flashbotv1.MyResource) *appsv1.Deployment {
+func (r *MyCustomResourceReconciler) createDeployment(myResource *flashbotv1.MyCustomResource) *appsv1.Deployment {
  labels := map[string]string{"app": myResource.Name}
  replicas := int32(myResource.Spec.Replicas)
  return &appsv1.Deployment{
